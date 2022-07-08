@@ -17,9 +17,9 @@
       google.charts.setOnLoadCallback(drawChart0);
       function drawChart0() {
         var data = google.visualization.arrayToDataTable([
-          ['Phys Status', 'Weeks'],
-          ['High Weeks',     8],
-          ['Low Weeks',      6]
+          ['Overall Status', 'Weeks'],
+          ['High Weeks',     {high_weeks}],
+          ['Low Weeks',      {low_weeks}]
         ]);
 
         var options = {
@@ -46,8 +46,8 @@
       function drawChart1() {
         var data = google.visualization.arrayToDataTable([
           ['Phys Status', 'Weeks'],
-          ['High Weeks',     8],
-          ['Low Weeks',      6]
+          ['High Weeks',     {phys_high}],
+          ['Low Weeks',      {phys_low}]
         ]);
 
         var options = {
@@ -73,9 +73,9 @@
       google.charts.setOnLoadCallback(drawChart2);
       function drawChart2() {
         var data = google.visualization.arrayToDataTable([
-          ['Phys Status', 'Weeks'],
-          ['High Weeks',     10],
-          ['Low Weeks',      4]
+          ['Weighin Status', 'Weeks'],
+          ['High Weeks',     {weigh_high}],
+          ['Low Weeks',      {weigh_low}]
         ]);
 
         var options = {
@@ -101,9 +101,9 @@
       google.charts.setOnLoadCallback(drawChart3);
       function drawChart3() {
         var data = google.visualization.arrayToDataTable([
-          ['Phys Status', 'Weeks'],
-          ['High Weeks',     10],
-          ['Low Weeks',      4]
+          ['Learn Status', 'Weeks'],
+          ['High Weeks',     {learn_high}],
+          ['Low Weeks',      {learn_low}]
         ]);
 
         var options = {
@@ -128,9 +128,9 @@
       google.charts.setOnLoadCallback(drawChart4);
       function drawChart4() {
         var data = google.visualization.arrayToDataTable([
-          ['Phys Status', 'Weeks'],
-          ['High Weeks',     10],
-          ['Low Weeks',      4]
+          ['Social Status', 'Weeks'],
+          ['High Weeks',     {social_high}],
+          ['Low Weeks',      {social_low}]
         ]);
 
         var options = {
@@ -220,6 +220,10 @@
     </script>
 
 
+
+    
+
+
 </head>
 <body>
     
@@ -229,9 +233,10 @@
                 <div class="card-single1">
                 
                     <h2>Overall Noom Activity Level</h2>
+                
                     
                     <!-- <div id="chart_div" style="width: 100%; height: 75px;"></div> -->
-                    <h5><span class="patient">{patient_name}</span> has completed <span class="week_no">14</span> out of 52 weeks</h5>
+                    <h5><span class="patient">{patient_name}</span> has completed <span class="week_no">{week_no}</span> out of 52 weeks</h5>
                     <p id="definitions"><span class="high">🟢 HIGH (H)</span> - score when meeting or exceeding dDPP goals, <span class="low">🔴 LOW (L)</span> - score when not meeting dDPP goals</p>
                     <div class="engagement-cards">
                       <div id="donutchart0" style="width: 400px; height: 200px;"></div>
@@ -257,40 +262,40 @@
                     
                     <div class="outcome-cards1">
                         <div class="outcome1">
-                            <h1><span class="weight">120</span> lbs</h1>
-                            <p>last logged 01/12/2021</p>
+                            <h1><span class="weight">{weight}</span> lbs</h1>
+                            <p>last logged {weight_date}</p>
                         </div>
 
                         <div class="outcome2">
-                            <h1><span class="weight_change">5</span> lbs 
-                                <img src="https://s2.svgbox.net/octicons.svg?ic=arrow-up-bold&color=ff0000" width="25" height="25">
-                                <img src="https://s2.svgbox.net/octicons.svg?ic=arrow-down-bold&color=169550" width="25" height="25">
+                            <h1><span class="weight_change">{weight_change}</span> lbs 
+                                <!-- <img src="https://s2.svgbox.net/octicons.svg?ic=arrow-up-bold&color=ff0000" width="25" height="25">
+                                <img src="https://s2.svgbox.net/octicons.svg?ic=arrow-down-bold&color=169550" width="25" height="25"> -->
                             </h1>
                             <p>weight change from start</p>
                         </div>
 
                         <div class="outcome3">
-                            <h1><span class="a1c">5.8</span>
-                                <img src="https://s2.svgbox.net/octicons.svg?ic=arrow-up-bold&color=ff0000" width="25" height="25">
-                                <img src="https://s2.svgbox.net/octicons.svg?ic=arrow-down-bold&color=169550" width="25" height="25">
+                            <h1><span class="a1c">{a1c}</span>
+                                <!-- <img src="https://s2.svgbox.net/octicons.svg?ic=arrow-up-bold&color=ff0000" width="25" height="25">
+                                <img src="https://s2.svgbox.net/octicons.svg?ic=arrow-down-bold&color=169550" width="25" height="25"> -->
                             </h1>
-                            <p>A1c last logged 01/12/2021</p>
+                            <p>A1c last logged {a1c_date}</p>
                         </div>
                     </div>
 
                     <div class="outcome-cards2">
                         <div class="outcome4">
-                            <h1><span class="exercise">345</span> min</h1>
+                            <h1><span class="exercise">{exercise_min}</span> min</h1>
                             <p>Avg weekly exercise</p>
                         </div>
 
                         <div class="outcome5">
-                            <h1><span class="steps">12345</span> steps</h1>
+                            <h1><span class="steps">{steps}</span> steps</h1>
                             <p>Avg weekly steps</p>
                         </div>
 
                         <div class="outcome6">
-                            <h1><span class="cal">4000</span> cal</h1>
+                            <h1><span class="cal">{calorie}</span> cal</h1>
                             <p>Avg daily cal</p>
                         </div>
                     </div>
